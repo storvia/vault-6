@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Private Systems Memo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #111;
+      --ash: #9a9a9a;
+      --oxide: #9b2c2c;
+    }
+
+    body {
+      margin: 0;
+      background: #fdfdfd;
+      color: var(--ink);
+      font-family: Inter, sans-serif;
+    }
+
+    .page {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 96px 72px;
+      line-height: 1.6;
+    }
+
+    /* 1. Belief Infection Margins */
+    .margin-note {
+      position: absolute;
+      top: 120px;
+      left: -180px;
+      width: 150px;
+      font-size: 11px;
+      color: var(--ash);
+      opacity: 0.7;
+      user-select: none;
+    }
+
+    /* 2. Delayed Meaning Sentences */
+    .delayed {
+      margin: 64px 0;
+      font-size: 18px;
+      opacity: 0;
+      animation: reveal 1s ease forwards;
+      animation-delay: 18s;
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; }
+    }
+
+    /* 3. Authority Reversal Cue */
+    .authority {
+      margin: 96px 0;
+      text-align: center;
+      color: #777;
+      font-size: 16px;
+    }
+
+    /* 4. Anti-Aspiration Kill Switch */
+    .kill-switch h3 {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: #555;
+    }
+
+    .kill-switch p {
+      margin-top: 12px;
+      max-width: 520px;
+    }
+
+    /* 5. Three Lies */
+    .lies {
+      margin: 72px 0;
+    }
+
+    .lies div {
+      margin-bottom: 16px;
+    }
+
+    /* 6. Invisible Countdown */
+    .countdown {
+      margin: 80px 0;
+      color: #666;
+    }
+
+    /* 7. Language Contamination Warning */
+    .warning {
+      margin: 72px 0;
+      color: var(--oxide);
+      font-size: 14px;
+      max-width: 420px;
+    }
+
+    /* 8. One-Move Oath */
+    .oath {
+      margin: 96px 0;
+      text-align: center;
+      font-family: "Libre Baskerville", serif;
+      font-style: italic;
+      font-size: 20px;
+    }
+
+    /* 9. Negative Space */
+    .negative-space {
+      height: 40vh;
+      position: relative;
+    }
+
+    .negative-space span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* 10. Exit Wound */
+    .exit {
+      margin: 120px 0 40px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 72px 32px;
+      }
+
+      .margin-note {
+        display: none; /* mobile removes margin cognition */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page">
+
+    <!-- Belief Infection Margin -->
+    <div class="margin-note">
+      Comfort is a compliance signal.
+    </div>
+
+    <!-- Delayed Meaning Sentence -->
+    <div class="delayed">
+      If this feels obvious, it already failed.
+    </div>
+
+    <!-- Authority Reversal -->
+    <div class="authority">
+      You are no longer required to agree with the people who raised you.
+    </div>
+
+    <!-- Anti-Aspiration Kill Switch -->
+    <div class="kill-switch">
+      <h3>DO NOT USE THIS TO FEEL INSPIRED</h3>
+      <p>
+        Inspiration is a sedative.<br><br>
+        This document is meant to reduce emotion, narrow focus,
+        and force a single unfair move.
+      </p>
+    </div>
+
+    <!-- Three Lies -->
+    <div class="lies">
+      <div>1. You were praised for being reliable — so you avoided leverage.</div>
+      <div>2. You were praised for being humble — so you avoided power.</div>
+      <div>3. You were praised for being patient — so you tolerated stagnation.</div>
+    </div>
+
+    <!-- Invisible Countdown -->
+    <div class="countdown">
+      Every year you delay reorientation, the cost of reversal doubles.
+    </div>
+
+    <!-- Language Contamination Warning -->
+    <div class="warning">
+      ⚠️ Do not soften the language.<br><br>
+      Words like balance, passion, journey, or alignment will neutralize the effect.
+    </div>
+
+    <!-- One-Move Oath -->
+    <div class="oath">
+      “I will not add a second move until the first one pays me.”
+    </div>
+
+    <!-- Negative Space -->
+    <div class="negative-space">
+      <span>If you need more content, you missed the point.</span>
+    </div>
+
+    <!-- Exit Wound -->
+    <div class="exit">
+      If this made you uncomfortable, it’s because something old just lost authority.
+    </div>
+
+  </section>
+
+</body>
+</html>
