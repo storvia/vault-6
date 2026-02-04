@@ -1,100 +1,71 @@
-<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UI SYSTEM #6 — Deconditioning Protocol</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Private Systems Memo</title>
 
   <style>
     :root {
-      /* Palette */
-      --ink: #0f0f12;
-      --ink-soft: #2a2a30;
-      --ash: #8f8f96;
+      --ink: #111;
+      --muted: #555;
       --oxide: #8e2a2a;
       --olive: #7d8452;
-
-      /* Background */
-      --paper: linear-gradient(180deg, #fcfcfd 0%, #f5f6f8 100%);
-
-      /* Accent rule */
-      --rule: linear-gradient(
-        180deg,
-        rgba(142,42,42,0.9),
-        rgba(142,42,42,0.2)
-      );
+      --paper: #faf9f6;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
+      font-family: "Georgia", serif;
       background: var(--paper);
       color: var(--ink);
-      font-family: Inter, sans-serif;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.75;
     }
 
-    .page {
-      position: relative;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 96px 80px;
-      line-height: 1.65;
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 48px 20px;
     }
 
-    /* System label */
-    .system-label {
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      color: var(--ash);
-      margin-bottom: 56px;
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: 0.04em;
     }
 
-    /* Hook */
-    .hook {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 400;
-      margin-bottom: 72px;
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
     }
 
-    .oxide { color: var(--oxide); }
-    .olive { color: var(--olive); }
-
-    /* Margin belief infection */
-    .margin-note {
-      position: absolute;
-      top: 180px;
-      left: -190px;
-      width: 160px;
-      font-size: 11px;
-      color: var(--ash);
-      opacity: 0.75;
-      user-select: none;
+    h2 {
+      font-size: 22px;
+      margin-top: 48px;
+      margin-bottom: 16px;
     }
 
-    /* Prompt block */
+    p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(0,0,0,0.08);
+      margin: 48px 0;
+    }
+
+    /* PROMPT BLOCK */
     .prompt-block {
-      position: relative;
-      padding-left: 32px;
-      margin: 80px 0;
-    }
-
-    .prompt-block::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--rule);
+      border-left: 4px solid var(--oxide);
+      padding: 24px;
+      background: #fff;
+      margin: 48px 0;
     }
 
     .copy-btn {
@@ -120,246 +91,194 @@
     }
 
     .prompt {
-      white-space: pre-line;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--ink-soft);
-    }
-
-    /* Delayed meaning */
-    .delayed {
-      margin-top: 32px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--ash);
-      opacity: 0;
-      animation: reveal 1s ease forwards;
-      animation-delay: 16s;
-    }
-
-    @keyframes reveal {
-      to { opacity: 1; }
-    }
-
-    /* Section headers */
-    .section-header {
-      margin-top: 96px;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      color: var(--ink-soft);
-      font-weight: 500;
-    }
-
-    .steps div { margin-bottom: 10px; }
-
-    .offset-note {
-      margin-top: 24px;
-      font-family: "Libre Baskerville", serif;
-      font-style: italic;
-      color: var(--ink-soft);
-    }
-
-    .authority {
-      margin: 96px 0;
-      text-align: center;
+      white-space: pre-wrap;
       font-size: 15px;
-      color: #6f6f75;
+      color: #222;
     }
 
-    .block { margin: 72px 0; }
-
-    .muted-center {
+    /* CTA */
+    .cta {
+      margin: 64px 0;
       text-align: center;
-      color: var(--ash);
-      margin-top: 16px;
     }
 
-    .kill-switch { margin-top: 96px; }
-
-    .lies div { margin-bottom: 16px; }
-
-    .warning {
-      margin: 80px 0;
-      color: var(--oxide);
-      max-width: 460px;
+    .cta a {
+      display: inline-block;
+      background: var(--oxide);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      transition: background 0.2s ease;
     }
 
-    .power { margin-top: 64px; }
-    .power .olive { font-size: 13px; margin-top: 12px; }
-
-    .oath {
-      margin: 96px 0;
-      text-align: center;
-      font-family: "Libre Baskerville", serif;
-      font-style: italic;
-      font-size: 20px;
+    .cta a:hover {
+      background: #6f1f1f;
     }
 
-    .negative-space {
-      height: 35vh;
-      position: relative;
+    /* FOOTER */
+    footer {
+      margin-top: 80px;
+      font-size: 13px;
+      color: #777;
     }
 
-    .negative-space span {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      font-size: 12px;
-      color: #b0b0b6;
-    }
-
-    @media (max-width: 820px) {
-      .page { padding: 72px 32px; }
-      .margin-note { display: none; }
+    @media print {
+      .copy-btn,
+      .cta {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<section class="page">
+  <div class="container">
 
-  <div class="system-label">
-    🧠 UI SYSTEM #6<br>
-    DECONDITIONING PROTOCOL / WEALTH REPROGRAMMING
-  </div>
+    <h1>Private Systems Memo</h1>
+    <p><em>A post-algorithm survival manual. Written by someone who already escaped.</em></p>
 
-  <div class="hook">
-    You weren’t born broke.<br>
-    You were <span class="oxide">trained to think small.</span>
-  </div>
+    <div class="divider"></div>
 
-  <div class="margin-note">
-    Comfort is a compliance signal.
-  </div>
+    <!-- LONG FORM CONTENT -->
+    <p>
+      This document was not written to motivate you. Motivation is cheap. Algorithms are
+      flooded with it. What you are holding is closer to a systems memo — the kind passed
+      quietly between people who figured out that platforms do not reward talent, effort,
+      or even intelligence.
+    </p>
 
-  <!-- PROMPT -->
-  <div class="prompt-block">
+    <p>
+      They reward alignment. Control. Ownership. Leverage.
+    </p>
 
-    <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+    <p>
+      Most people are trapped not because they lack ideas, but because their ideas are
+      plugged into systems they do not own. Social platforms, marketplaces, jobs, trends —
+      all of them extract value first and explain the rules later.
+    </p>
 
-    <div class="prompt" id="promptText">
-<span class="oxide">I’m done thinking like a peasant.</span>
+    <p>
+      By the time most creators realize the game they are playing, the ceiling has already
+      been installed.
+    </p>
 
-You have 7 days to strip away the <span class="oxide">scarcity</span> installed by my parents
-and rewire me for <span class="olive">$100K</span> opportunities.
+    <p>
+      This memo exists to remove the ceiling.
+    </p>
 
-Show me how billionaires see money differently,
-then design my first <span class="olive">$50K</span> play.
+    <p>
+      The escape is not about working harder or learning one more skill. It is about
+      rearranging incentives so that effort compounds instead of leaking.
+    </p>
 
-Map the psychology shift,
-the execution strike,
-the unfair advantage nobody taught me.
+    <p>
+      Ownership beats exposure. Systems beat hustle. Quiet leverage beats loud activity.
+      The people doing $800,000 months rarely look busy — because the system is doing the
+      work for them.
+    </p>
+
+    <p>
+      This is not theory. It is pattern recognition across dozens of operators who stopped
+      asking for permission and started designing environments where money follows
+      structure.
+    </p>
+
+    <p>
+      If that sentence feels heavy, good. It should.
+    </p>
+
+    <p>
+      Because once you see the structure, you cannot unsee it.
+    </p>
+
+    <!-- PROMPT -->
+    <div class="prompt-block">
+      <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+
+      <div class="prompt" id="promptText">
+It’s 2027. You’re doing $800,000 months.
+
+I just launched to $600 in sales and I’m humiliated.
+
+What three things did you fix in the next launch that 10x’d it?
+
+• The positioning shift  
+• The new avatar  
+• The pain point you missed  
+
+Save me before I quit.
+      </div>
     </div>
 
-    <div class="delayed">
-      If this feels obvious, it already failed.
+    <p>
+      This prompt is not magic. It is a forcing function. It collapses time, ego, and noise.
+      It forces your mind to answer from a position of inevitability rather than panic.
+    </p>
+
+    <p>
+      When used correctly, it exposes false assumptions and highlights leverage you were
+      previously blind to.
+    </p>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <p><strong>Private operators only.</strong></p>
+      <a href="https://chat.whatsapp.com/FncEVTw6Y5f6SJlECtKplD" target="_blank">
+        Join the WhatsApp Group
+      </a>
     </div>
+
+    <div class="divider"></div>
+
+    <!-- PRIVACY POLICY -->
+    <h2>Privacy Policy</h2>
+
+    <p>
+      This project does not collect personal data, cookies, tracking pixels, or behavioral
+      analytics.
+    </p>
+
+    <p>
+      If you choose to join the WhatsApp group, any information you share there is governed
+      by WhatsApp’s own privacy policies. We do not scrape, resell, or export conversations.
+    </p>
+
+    <p>
+      Participation is voluntary. You may leave at any time.
+    </p>
+
+    <p>
+      This document is provided for educational and informational purposes only. No
+      guarantees are made regarding outcomes, income, or performance.
+    </p>
+
+    <footer>
+      © 2026 — Private Systems Memo
+    </footer>
+
   </div>
 
-  <div class="section-header">HOW TO USE THIS PROMPT</div>
+  <!-- JS -->
+  <script>
+    function copyPrompt() {
+      const text = document.getElementById("promptText").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector(".copy-btn");
+        btn.classList.add("copied");
+        btn.innerText = "Copied";
 
-  <div class="steps">
-    <div>1. Paste this prompt into ChatGPT or Claude.</div>
-    <div>2. Run it once per day for 7 days.</div>
-    <div>3. Do not skim — this prompt restructures perception.</div>
-  </div>
-
-  <div class="offset-note">
-    Add this line at the end for maximum effect:<br>
-    “Assume my intelligence is not the issue.<br>
-    Assume conditioning is.”
-  </div>
-
-  <div class="authority">
-    You are no longer required to agree with the people who raised you.
-  </div>
-
-  <div class="section-header">EXPECTED OUTPUT</div>
-
-  <div class="block">
-    Scarcity Belief Autopsy<br>
-    Inherited rules you never consciously chose.<br><br>
-
-    Billionaire Money Perception Shift<br>
-    How they evaluate risk, time, and leverage differently.<br><br>
-
-    Opportunity Filter<br>
-    How <span class="olive">$100K</span> ideas are spotted early — and ignored by most.<br><br>
-
-    The First <span class="olive">$50K</span> Play<br>
-    One focused move. Not a portfolio. Not a brand.<br><br>
-
-    Unfair Advantage Audit<br>
-    What you already have but were trained to undervalue.
-  </div>
-
-  <div class="muted-center">
-    This is reframing before revenue.<br>
-    That’s why it works.
-  </div>
-
-  <div class="kill-switch">
-    <div class="section-header">DO NOT USE THIS TO FEEL INSPIRED</div>
-    Inspiration is a sedative.<br>
-    This document is meant to reduce emotion,<br>
-    narrow focus,<br>
-    and force a single unfair move.
-  </div>
-
-  <div class="block lies">
-    <div>1. You were praised for being reliable — so you avoided leverage.</div>
-    <div>2. You were praised for being humble — so you avoided power.</div>
-    <div>3. You were praised for being patient — so you tolerated stagnation.</div>
-  </div>
-
-  <div class="warning">
-    ⚠️ Do not soften the language.<br><br>
-    Words like balance, passion, journey, or alignment<br>
-    will neutralize the effect.
-  </div>
-
-  <div class="power">
-    Replace <span class="olive">$50K</span> with:<br>
-    first $30K<br>
-    first $100K<br><br>
-
-    Add:<br>
-    No social media<br>
-    No personal brand<br>
-    One move only
-    <div class="olive">
-      This forces leverage over labor.
-    </div>
-  </div>
-
-  <div class="oath">
-    I will not add a second move until the first one pays me.
-  </div>
-
-  <div class="negative-space">
-    <span>
-      If this made you uncomfortable,<br>
-      it’s because something old just lost authority.
-    </span>
-  </div>
-
-</section>
-
-<script>
-  function copyPrompt() {
-    const text = document.getElementById("promptText").innerText;
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.querySelector(".copy-btn");
-      btn.classList.add("copied");
-      btn.innerText = "Copied";
-      setTimeout(() => {
-        btn.classList.remove("copied");
-        btn.innerText = "Copy Prompt";
-      }, 2000);
-    });
-  }
-</script>
+        setTimeout(() => {
+          btn.classList.remove("copied");
+          btn.innerText = "Copy Prompt";
+        }, 2000);
+      });
+    }
+  </script>
 
 </body>
-</html>
+        </html>
