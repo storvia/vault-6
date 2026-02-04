@@ -46,6 +46,31 @@
 
     .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(0,0,0,0.12), transparent); margin: 64px 0; }
 
+    /* LONG-FORM MANUSCRIPT */
+    .long-manuscript {
+      margin: 0 auto 64px;
+      padding: 0 12px;
+    }
+    .manuscript-line {
+      font-size: 17px;
+      line-height: 1.85;
+      margin-bottom: 22px;
+      color: #2a2a2a;
+      transition: all 0.3s ease;
+    }
+    /* Gradient text per line for luxury feel */
+    .line1 { background: linear-gradient(90deg, #a52b2b, #7f8752); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line2 { background: linear-gradient(90deg, #7f8752, #a52b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line3 { background: linear-gradient(90deg, #a52b2b, #c48e6a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line4 { background: linear-gradient(90deg, #c48e6a, #7f8752); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line5 { background: linear-gradient(90deg, #7f8752, #a52b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line6 { background: linear-gradient(90deg, #a52b2b, #f0d9c0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line7 { background: linear-gradient(90deg, #f0d9c0, #7f8752); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line8 { background: linear-gradient(90deg, #7f8752, #a52b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line9 { background: linear-gradient(90deg, #a52b2b, #c48e6a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .line10 { background: linear-gradient(90deg, #c48e6a, #7f8752); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .manuscript-line:hover { filter: brightness(1.05); }
+
     /* PROMPT BLOCK */
     .prompt-block {
       margin: 64px 0;
@@ -55,7 +80,6 @@
       box-shadow: 0 6px 24px rgba(0,0,0,0.08);
     }
     .prompt { white-space: pre-wrap; font-size: 15px; line-height: 1.7; color: #1a1a1a; letter-spacing: 0.02em; }
-
     .copy-btn {
       background: transparent;
       border: 1px solid var(--line);
@@ -159,16 +183,18 @@
     <div class="divider"></div>
 
     <!-- LONG FORM MANUSCRIPT -->
-    <p>This document was not written to motivate you. Motivation is cheap and disposable. It is a distraction...</p>
-    <p>They reward alignment. Control. Ownership. Leverage. Most people think effort is the key; it is not...</p>
-    <p>Most people are trapped not because they lack ideas or skill but because they have never questioned the structure of what they were rewarded for...</p>
-    <p>By the time most creators realize the game they are playing, the ceiling has already been installed above them...</p>
-    <p>This memo exists to remove the ceiling. To make you conscious of leverage, risk, and timing...</p>
-    <p>The escape is not about working harder or learning one more skill. It is about **identifying the unfair advantage** you already possess...</p>
-    <p>Ownership beats exposure. Systems beat hustle. The hierarchy of leverage is invisible until you disrupt it internally...</p>
-    <p>This is not theory. It is pattern recognition across dozens of operators who quietly built autonomy in hostile environments...</p>
-    <p>If that sentence feels heavy, good. It should. You are not being prepared for comfort. You are being prepared for reality...</p>
-    <p>Because once you see the structure, you cannot unsee it. And once you act, nothing will feel the same...</p>
+    <div class="long-manuscript">
+      <p class="manuscript-line line1">This document was not written to motivate you. Motivation is cheap and disposable. It is a distraction...</p>
+      <p class="manuscript-line line2">They reward alignment. Control. Ownership. Leverage. Most people think effort is the key; it is not...</p>
+      <p class="manuscript-line line3">Most people are trapped not because they lack ideas or skill but because they have never questioned the structure of what they were rewarded for...</p>
+      <p class="manuscript-line line4">By the time most creators realize the game they are playing, the ceiling has already been installed above them...</p>
+      <p class="manuscript-line line5">This memo exists to remove the ceiling. To make you conscious of leverage, risk, and timing...</p>
+      <p class="manuscript-line line6">The escape is not about working harder or learning one more skill. It is about <strong>identifying the unfair advantage</strong> you already possess...</p>
+      <p class="manuscript-line line7">Ownership beats exposure. Systems beat hustle. The hierarchy of leverage is invisible until you disrupt it internally...</p>
+      <p class="manuscript-line line8">This is not theory. It is pattern recognition across dozens of operators who quietly built autonomy in hostile environments...</p>
+      <p class="manuscript-line line9">If that sentence feels heavy, good. It should. You are not being prepared for comfort. You are being prepared for reality...</p>
+      <p class="manuscript-line line10">Because once you see the structure, you cannot unsee it. And once you act, nothing will feel the same...</p>
+    </div>
 
     <!-- PROMPT BLOCK -->
     <div class="prompt-block">
@@ -187,8 +213,6 @@ What three things did you fix in the next launch that 10x’d it?
 Save me before I quit.
       </div>
     </div>
-
-    <p>This prompt is not magic. It is a forcing function for reflection, perspective, and disciplined action.</p>
 
     <div class="divider"></div>
 
