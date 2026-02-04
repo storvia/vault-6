@@ -5,22 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Private Systems Memo</title>
 
-  <!-- PREMIUM CSS -->
+  <!-- PREMIUM CSS WITH GRADIENTS -->
   <style>
     :root {
+      /* Base colors */
       --ink: #0f0f0f;
       --ink-soft: #2a2a2a;
       --muted: #6b6b6b;
-      --oxide: #7c1f1f;
-      --olive: #6f7751;
-      --paper: #f6f4ef;
+      --oxide: #a52b2b;
+      --olive: #7f8752;
+      --paper-light: #fefcf6;
+      --paper-gradient: linear-gradient(160deg, #fefcf6 0%, #f4f0e8 100%);
       --line: rgba(0,0,0,0.08);
+      --cta-gradient: linear-gradient(135deg, #a52b2b 0%, #7f8752 100%);
     }
 
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--paper);
+      background: var(--paper-gradient);
       color: var(--ink);
       font-family: "Iowan Old Style", "Georgia", serif;
       line-height: 1.85;
@@ -41,15 +44,15 @@
     p { font-size: 17px; color: var(--ink-soft); margin-bottom: 22px; }
     p strong { font-weight: 600; color: var(--ink); }
 
-    .divider { height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin: 64px 0; }
+    .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(0,0,0,0.12), transparent); margin: 64px 0; }
 
     /* PROMPT BLOCK */
     .prompt-block {
       margin: 64px 0;
       padding: 32px 36px;
-      background: #fff;
-      border-left: 3px solid var(--oxide);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 12px 28px rgba(0,0,0,0.04);
+      background: linear-gradient(145deg, #fffdfa 0%, #f6f2e8 100%);
+      border-left: 4px solid var(--oxide);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
     }
     .prompt { white-space: pre-wrap; font-size: 15px; line-height: 1.7; color: #1a1a1a; letter-spacing: 0.02em; }
 
@@ -65,8 +68,12 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
-    .copy-btn:hover { border-color: rgba(124,31,31,0.5); color: var(--oxide); }
-    .copy-btn.copied { border-color: rgba(111,119,81,0.6); color: var(--olive); }
+    .copy-btn:hover {
+      color: var(--oxide);
+      border-color: rgba(165,43,43,0.6);
+      background: linear-gradient(90deg, #fff3f3, #fffaf5);
+    }
+    .copy-btn.copied { border-color: rgba(127,135,82,0.6); color: var(--olive); }
 
     /* CTA BUTTON */
     .cta { margin: 96px 0 72px; text-align: center; }
@@ -74,15 +81,16 @@
     .cta a {
       display: inline-block;
       padding: 14px 36px;
-      border: 1px solid var(--oxide);
-      color: var(--oxide);
+      background: var(--cta-gradient);
+      color: #fff;
       text-decoration: none;
       font-size: 13px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+      border-radius: 4px;
       transition: all 0.25s ease;
     }
-    .cta a:hover { background: var(--oxide); color: #fff; }
+    .cta a:hover { background: linear-gradient(135deg, #7c1f1f 0%, #6f7751 100%); }
 
     /* FOOTER */
     footer {
@@ -93,22 +101,18 @@
       text-transform: uppercase;
       color: #8a8a8a;
     }
-
     footer a.privacy-link {
       color: #8a8a8a;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: all 0.2s ease;
     }
-    footer a.privacy-link:hover {
-      color: var(--ink);
-      border-bottom: 1px solid var(--ink);
-    }
+    footer a.privacy-link:hover { color: var(--ink); border-bottom: 1px solid var(--ink); }
 
     /* PRIVACY MODAL */
-    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(15,15,15,0.75); font-family: Georgia, serif; }
+    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(15,15,15,0.85); font-family: Georgia, serif; }
     .modal-content {
-      background: #f6f4ef;
+      background: linear-gradient(145deg, #fefcf6 0%, #f4f0e8 100%);
       margin: 6% auto;
       padding: 40px 32px;
       border-radius: 6px;
@@ -155,16 +159,16 @@
     <div class="divider"></div>
 
     <!-- LONG FORM MANUSCRIPT -->
-    <p>This document was not written to motivate you. Motivation is cheap...</p>
-    <p>They reward alignment. Control. Ownership. Leverage...</p>
-    <p>Most people are trapped not because they lack ideas...</p>
-    <p>By the time most creators realize the game they are playing, the ceiling has already been installed...</p>
-    <p>This memo exists to remove the ceiling...</p>
-    <p>The escape is not about working harder or learning one more skill...</p>
-    <p>Ownership beats exposure. Systems beat hustle...</p>
-    <p>This is not theory. It is pattern recognition across dozens of operators...</p>
-    <p>If that sentence feels heavy, good. It should...</p>
-    <p>Because once you see the structure, you cannot unsee it...</p>
+    <p>This document was not written to motivate you. Motivation is cheap and disposable. It is a distraction...</p>
+    <p>They reward alignment. Control. Ownership. Leverage. Most people think effort is the key; it is not...</p>
+    <p>Most people are trapped not because they lack ideas or skill but because they have never questioned the structure of what they were rewarded for...</p>
+    <p>By the time most creators realize the game they are playing, the ceiling has already been installed above them...</p>
+    <p>This memo exists to remove the ceiling. To make you conscious of leverage, risk, and timing...</p>
+    <p>The escape is not about working harder or learning one more skill. It is about **identifying the unfair advantage** you already possess...</p>
+    <p>Ownership beats exposure. Systems beat hustle. The hierarchy of leverage is invisible until you disrupt it internally...</p>
+    <p>This is not theory. It is pattern recognition across dozens of operators who quietly built autonomy in hostile environments...</p>
+    <p>If that sentence feels heavy, good. It should. You are not being prepared for comfort. You are being prepared for reality...</p>
+    <p>Because once you see the structure, you cannot unsee it. And once you act, nothing will feel the same...</p>
 
     <!-- PROMPT BLOCK -->
     <div class="prompt-block">
@@ -184,7 +188,7 @@ Save me before I quit.
       </div>
     </div>
 
-    <p>This prompt is not magic. It is a forcing function...</p>
+    <p>This prompt is not magic. It is a forcing function for reflection, perspective, and disciplined action.</p>
 
     <div class="divider"></div>
 
@@ -212,13 +216,13 @@ Save me before I quit.
       <h1>Privacy Policy</h1>
       <p>This website respects your privacy. We collect only the minimum information necessary to operate and improve this experience.</p>
       <h2>Information Collection</h2>
-      <p>We do not collect personal data unless you voluntarily provide it...</p>
+      <p>We do not collect personal data unless you voluntarily provide it. No tracking pixels or third-party behavioral surveillance are used.</p>
       <h2>Cookies</h2>
-      <p>This site may use basic cookies strictly for functionality...</p>
+      <p>This site may use basic cookies strictly for functionality. These cookies do not track you across the internet.</p>
       <h2>Third-Party Links</h2>
-      <p>This site may contain links to external platforms, including WhatsApp...</p>
+      <p>This site may contain links to external platforms, including WhatsApp. We are not responsible for their privacy practices.</p>
       <h2>Changes</h2>
-      <p>This policy may be updated periodically...</p>
+      <p>This policy may be updated periodically. Continued use of the site implies acceptance of any changes.</p>
     </div>
   </div>
 
@@ -258,5 +262,6 @@ Save me before I quit.
       }
     }
   </script>
+
 </body>
 </html>
